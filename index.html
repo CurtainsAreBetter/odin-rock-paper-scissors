@@ -21,26 +21,65 @@
       }
     }
     
-    function playGame(playerSelection, computerSelection){
-      playerSelection = playerSelection.toUpperCase();
-      computerSelection = computerSelection.toUpperCase();
-      // see who wins
-
-      // rock
-        // tie
-        // lose
-        // win
-      // paper
-        // win
-        // tie
-        // lose
-      // scissors
-        // lose
-        // win
-        // tie
-
+    function playRound(playerSelection, computerSelection){
+      let ps = playerSelection.toUpperCase();
+      let cs = computerSelection.toUpperCase();
+      let result;
+      switch (ps) {
+        case "ROCK":
+          switch (cs) {
+            case "PAPER":
+              result = "lose";
+              break;
+            case "SCISSORS":
+              result = "win";
+              break;
+            default: 
+              result = "tie";
+              break;
+          }
+          break;
+        case "PAPER": 
+          switch (cs) {
+              case "ROCK":
+                result = "win";
+                break;
+              case "SCISSORS":
+                result = "lose";
+                break;
+              default: 
+                result = "tie";
+                break;
+            }
+            break;
+        case "SCISSORS":
+          switch (cs) {
+              case "PAPER":
+                result = "win";
+                break;
+              case "ROCK":
+                result = "lose";
+                break;
+              default: 
+                result = "tie";
+                break;
+            }
+            break;
+        }
       
+      switch (result) {
+        case "win": 
+          return `You win! ${playerSelection} beats ${computerSelection}`;
+        case "lose":
+          return `You lose! ${playerSelection} loses to ${computerSelection}`;
+        case "tie": 
+          return `You tied!`
+      }
     }
+    const playerSelection = "paper";
+    const computerSelection = computerPlay();
+    console.log(computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
 
   </script>
 </body>
