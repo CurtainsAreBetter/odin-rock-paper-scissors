@@ -30,39 +30,30 @@
           switch (cs) {
             case "PAPER":
               return "lose";
-              break;
             case "SCISSORS":
               return "win";
-              break;
             default: 
               return "tie";
-              break;
           }
           break;
         case "PAPER": 
           switch (cs) {
               case "ROCK":
                 return "win";
-                break;
               case "SCISSORS":
                 return "lose";
-                break;
               default: 
                 return "tie";
-                break;
             }
             break;
         case "SCISSORS":
           switch (cs) {
               case "PAPER":
                 return "win";
-                break;
               case "ROCK":
                 return "lose";
-                break;
               default: 
                 return "tie";
-                break;
             }
             break;
         }
