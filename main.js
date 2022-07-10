@@ -50,7 +50,7 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function game() {
+function oldGame() {
   let compScore = 0;
   let userScore = 0;
 
@@ -88,4 +88,3 @@ if (compScore > userScore) {
 }
 }
 
-game();
