@@ -114,6 +114,81 @@ function setUserScore(score) {
   document.querySelector('#user-score').textContent = `${score}`;
 }
 
+// Round number
+function getRound() {
+  return Number(document.querySelector('#round-num').textContent);
+}
+function setRound(num) {
+  document.querySelector('#round-num').textContent = `${num}`;
+}
+
+// Round Images/ move
+function setUserChoice(mv) {
+  const img = document.querySelector('#info-pic-user');
+  const move = document.querySelector('#info-move-user');
+  switch(mv) {
+    case 'rock':
+      move.textContent = 'Rock';
+      img.removeAttribute('src');
+      img.setAttribute('src', 'rock.jpg');
+      break;
+    case 'paper':
+      move.textContent = 'Paper';
+      img.removeAttribute('src');
+      img.setAttribute('src', 'paper.jpg');
+      break;
+    case 'scissors':
+      move.textContent = 'Scissors';
+      img.removeAttribute('src');
+      img.setAttribute('src', 'scissors.jpg');
+      break;
+    default:
+      return 'ERROR';
+  }
+}
+function setCompChoice(mv) {
+  const img = document.querySelector('#info-pic-comp');
+  const move = document.querySelector('#info-move-comp');
+  switch(mv) {
+    case 'rock':
+      move.textContent = 'Rock';
+      img.removeAttribute('src');
+      img.setAttribute('src', 'rock.jpg');
+      break;
+    case 'paper':
+      move.textContent = 'Paper';
+      img.removeAttribute('src');
+      img.setAttribute('src', 'paper.jpg');
+      break;
+    case 'scissors':
+      move.textContent = 'Scissors';
+      img.removeAttribute('src');
+      img.setAttribute('src', 'scissors.jpg');
+      break;
+    default:
+      return 'ERROR';
+  }
+
+}
+
+// round result change
+// from user perspective (win, lose, tie)
+function setRoundResult(res) {
+  const output = document.querySelector('#round-results');
+  switch (res) {
+    case 'win':
+      output.textContent = "User wins this round";
+      break;
+    case 'lose':
+      output.textContent = "Computer wins this round";
+      break;
+    case 'tie':
+      output.textContent = "User has tied with Computer this round";
+      break;
+    default:
+      return 'ERROR';
+  }
+}
 
 
 
@@ -129,4 +204,12 @@ function welcomeScreenToGameScreen() {
       .classList
       .remove('hidden');
   })
+}
+
+// Results sub screen
+function hideResults() {
+  document.querySelector('.round-info').classList.add('hidden');
+}
+function showResults() {
+  document.querySelector('.round-info').classList.remove('hidden');
 }
