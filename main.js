@@ -79,20 +79,24 @@ function oldGame() {
     console.log(`User Played ${player}`);
     console.log(`${output}\nCurrent score: ${userScore} v. ${compScore}`);
   }
-if (compScore > userScore) {
-  console.log("Computer wins! Game over");
-} else if (compScore < userScore) {
-  console.log("User wins! Game over");
-} else {
-  console.log("Tie game! Game over");
-}
+  if (compScore > userScore) {
+    console.log("Computer wins! Game over");
+  } else if (compScore < userScore) {
+    console.log("User wins! Game over");
+  } else {
+    console.log("Tie game! Game over");
+  }
 }
 
-function hideWindows() {
-    const welcomeBtn = document.querySelector('#play-game');
-    welcomeBtn.addEventListener('click', () => {
-        const welcomeSign = document.querySelector('#welcome-sign');
-        welcomeSign.classList.add('hidden');
-    })
+function welcomeToGame() {
+  const welcomeBtn = document.querySelector('#play-game');
+  welcomeBtn.addEventListener('click', () => {
+    const welcomeSign = document.querySelector('#welcome-screen');
+    welcomeSign.classList.add('hidden');
+
+    document.querySelector('#game-screen')
+      .classList
+      .remove('hidden');
+  })
 }
-hideWindows();
+welcomeToGame();
