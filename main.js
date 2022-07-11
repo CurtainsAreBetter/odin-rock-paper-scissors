@@ -1,4 +1,8 @@
 
+//======================
+//    GAME FUNCTIONS
+//======================
+
 function computerPlay() {
   // get random number between 1 and 3
   let num = Math.floor(Math.random() * 3) + 1;
@@ -88,7 +92,34 @@ function oldGame() {
   }
 }
 
-function welcomeToGame() {
+
+
+// ======================================
+//         Dom editing functions
+// ======================================
+
+
+// Scores
+function getCompScore() {
+  return Number(document.querySelector('#comp-score').textContent);
+}
+function getUserScore() {
+  return Number(document.querySelector('#user-score').textContent);
+}
+
+function setCompScore(score) {
+  document.querySelector('#comp-score').textContent = `${score}`;
+}
+function setUserScore(score) {
+  document.querySelector('#user-score').textContent = `${score}`;
+}
+
+
+
+
+
+// Screen changes
+function welcomeScreenToGameScreen() {
   const welcomeBtn = document.querySelector('#play-game');
   welcomeBtn.addEventListener('click', () => {
     const welcomeSign = document.querySelector('#welcome-screen');
@@ -99,4 +130,3 @@ function welcomeToGame() {
       .remove('hidden');
   })
 }
-welcomeToGame();
