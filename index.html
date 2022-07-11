@@ -18,7 +18,7 @@
   -->
 
   <!-- WELCOME SCREEN -->
-  <div class="header">ROCK! PAPER! SCISSORS</div>
+  <div class="header">ROCK! PAPER! SCISSORS!</div>
   <div class="welcome screen hidden" id="welcome-screen">
     <div class="primary-text">Click to play 5 rounds of rock paper scissors against a computer!</div>
     <button id="play-game">Click Me!</button>
@@ -61,6 +61,28 @@
         <button id="scissors" class="mv-btn">Scissor!</button>
       </div>
 
+    </div>
+
+
+    <!-- Round Info -->
+    <!--  hidden until user makes their move-->
+    <div class="round-info">
+      <div class="info-header">Round #<span id="round-num"></span>!</div>
+      <!-- space between -->
+      <div class="info-moves">
+        <div class="info-move-container">
+          <div class="info-move-header">User</div>
+          <img class="info-pic" id="info-pic-user">
+          <div class="info-move" id="info-move-user"></div>
+        </div>
+        <div class="vs">Vs.</div>
+        <div class="info-move-container">
+          <div class="info-move-header">Computer</div>
+          <img class="info-pic" id="info-pic-comp">
+          <div class="info-move" id="info-move-comp"></div>
+        </div>
+
+      </div>
     </div>
   </div>
 </body>
