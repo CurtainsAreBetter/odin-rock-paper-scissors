@@ -88,3 +88,11 @@ if (compScore > userScore) {
 }
 }
 
+function hideWindows() {
+    const welcomeBtn = document.querySelector('#play-game');
+    welcomeBtn.addEventListener('click', () => {
+        const welcomeSign = document.querySelector('#welcome-sign');
+        welcomeSign.classList.add('hidden');
+    })
+}
+hideWindows();
