@@ -67,22 +67,23 @@
     <!-- Round Info -->
     <!--  hidden until user makes their move-->
     <div class="round-info">
-      <div class="info-header">Round #<span id="round-num"></span>!</div>
-      <!-- space between -->
+      <div class="info-header primary-text">Round <span id="round-num">1</span></div>
       <div class="info-moves">
         <div class="info-move-container">
-          <div class="info-move-header">User</div>
-          <img class="info-pic" id="info-pic-user">
-          <div class="info-move" id="info-move-user"></div>
+          <div class="info-move-header">User chose:</div>
+          <img class="info-pic" id="info-pic-user" src="scissors.jpg">
+          <div class="info-move" id="info-move-user">Scissors</div>
         </div>
         <div class="vs">Vs.</div>
         <div class="info-move-container">
-          <div class="info-move-header">Computer</div>
-          <img class="info-pic" id="info-pic-comp">
-          <div class="info-move" id="info-move-comp"></div>
+          <div class="info-move-header">Computer chose:</div>
+          <img class="info-pic" id="info-pic-comp" src="scissors.jpg">
+          <div class="info-move" id="info-move-comp">Scissors</div>
         </div>
-
       </div>
+
+      <div id="round-results">Computer wins this round</div>
+
     </div>
   </div>
 </body>
