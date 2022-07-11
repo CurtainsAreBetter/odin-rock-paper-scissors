@@ -147,6 +147,31 @@ body {
 }
 
 
+/*=============================
+            end game
+==============================*/
+
+.end-game {
+    align-self: stretch;
+    background-color: #87805E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+
+.win-message {
+    color: #fff;
+    font-size: 128px;
+    font-weight: 1000;
+}
+
+#play-again {
+    font-size: 48px;
+    padding: 16px 48px;
+}
+
+
 
 
 
