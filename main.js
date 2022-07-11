@@ -14,36 +14,80 @@ function main() {
   // Listen for gameplay
   // =========
   document.querySelector('#rock')
-          .addEventListener('click', () => {console.log('rock click')});
+          .addEventListener('click', () => {game('rock')});
   document.querySelector('#paper')
-          .addEventListener('click', () => {console.log('paper click')});
+          .addEventListener('click', () => {game('paper')});
   document.querySelector('#scissors')
-          .addEventListener('click', () => {console.log('scissors click')});
+          .addEventListener('click', () => {game('scissors')});
 }
 
 main()
 
 function game(userEntry) {
-  // check round number
+  // get computer choice and round result
+  const compEntry = computerPlay();
+  const roundResult = playRound(userEntry, compEntry);
+  // update results
+  setCompChoice(compEntry);
+  setUserChoice(userEntry);
+  setRoundResult(roundResult);
+  // update scores
+  updateScores(roundResult);
+  
+  
+  
+  
+  
+  
   // if first round you'll need to unhide round result screen
-  
-  
-  
-  
-  const computerEntry = computerPlay();
+  // do after round winner is determined
+  if (getRound() == 0) {showResults()};
+  if (getRound() == 4) {
+    // figure out who won
+    const cs = getCompScore();
+    const us = getUserScore();
+    if (cs > us) {
+      setFinalMessage('lose');
+    } else if (cs < us) {
+      setFinalMessage('win');
+    } else {
+      setFinalMessage('tie');
+    }
+    buttonsToEnd();
+  }
+  // Increment round
+  setRound(getRound() + 1);
 
 }
 
 
 function resetToDefaults() {
-  // hide sub-screens
-  hideEndGame();
+  // hide sub-screens and show buttons
+  endToButtons();
   hideResults();
   // scores
   setCompScore(0);
   setUserScore(0);
   // round number
-  setRound('');
+  setRound(0);
+}
+
+
+function updateScores(roundRes) {
+  switch(roundRes) {
+    case 'win':
+      setUserScore(getUserScore() + 1);
+      break;
+    case 'lose':
+      setCompScore(getCompScore() + 1);
+      break;
+    case 'tie':
+      setUserScore(getUserScore() + 1);
+      setCompScore(getCompScore() + 1);
+      break;
+    default:
+      return 'ERROR';
+  }
 }
 
 
@@ -56,11 +100,11 @@ function computerPlay() {
   let num = Math.floor(Math.random() * 3) + 1;
   switch(Math.floor(Math.random() * 3) + 1) {
     case 1: 
-      return "Rock";
+      return "rock";
     case 2:
-      return "Paper";
+      return "paper";
     case 3: 
-    return "Scissors"
+    return "scissors"
   }
 }
 
