@@ -7,15 +7,44 @@ function main() {
   document.querySelector('#play-game')
           .addEventListener('click', welcomeScreenToGameScreen);
   /*======= End Start Screen ========== */
+  // Reset button
+  document.querySelector('#play-again')
+          .addEventListener('click', resetToDefaults);
+  // =========
+  // Listen for gameplay
+  // =========
+  document.querySelector('#rock')
+          .addEventListener('click', () => {console.log('rock click')});
+  document.querySelector('#paper')
+          .addEventListener('click', () => {console.log('paper click')});
+  document.querySelector('#scissors')
+          .addEventListener('click', () => {console.log('scissors click')});
 }
-
 
 main()
 
+function game(userEntry) {
+  // check round number
+  // if first round you'll need to unhide round result screen
+  
+  
+  
+  
+  const computerEntry = computerPlay();
+
+}
 
 
-
-
+function resetToDefaults() {
+  // hide sub-screens
+  hideEndGame();
+  hideResults();
+  // scores
+  setCompScore(0);
+  setUserScore(0);
+  // round number
+  setRound('');
+}
 
 
 //======================
