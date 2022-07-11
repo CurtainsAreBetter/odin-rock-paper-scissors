@@ -19,13 +19,13 @@
 
   <!-- WELCOME SCREEN -->
   <div class="header">ROCK! PAPER! SCISSORS!</div>
-  <div class="welcome screen hidden" id="welcome-screen">
+  <div class="welcome screen" id="welcome-screen">
     <div class="primary-text">Click to play 5 rounds of rock paper scissors against a computer!</div>
     <button id="play-game">Click Me!</button>
   </div>
 
   <!-- GAME SCREEN -->
-  <div id="game-screen" class="game screen">
+  <div id="game-screen" class="game screen hidden">
 
     <!-- Scores -->
     <div class="score-board">
@@ -46,14 +46,14 @@
 
 
     <!-- End game -->
-    <div class="end-game" >
-      <div class="win-message">YOU LOSE!</div>
+    <div class="end-game hidden">
+      <div class="win-message"></div>
       <button id="play-again">Play Again</button>
     </div>
 
 
     <!-- User Buttons -->
-    <div class="moves hidden">
+    <div class="moves">
 
       <div class="move-container">
         <img class="move-pic" alt="rocks" src="rock.jpg">
@@ -73,8 +73,8 @@
 
     <!-- Round Info -->
     <!--  hidden until user makes their move-->
-    <div class="round-info">
-      <div class="info-header primary-text">Round <span id="round-num"></span></div>
+    <div class="round-info hidden">
+      <div class="info-header primary-text">Round <span id="round-num">0</span></div>
       <div class="info-moves">
         <div class="info-move-container">
           <div class="info-move-header">User chose:</div>
