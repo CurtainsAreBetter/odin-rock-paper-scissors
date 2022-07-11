@@ -1,4 +1,23 @@
 
+function main() {
+  // =============
+  // Start screen
+  // =============
+  // welcome button
+  document.querySelector('#play-game')
+          .addEventListener('click', welcomeScreenToGameScreen);
+  /*======= End Start Screen ========== */
+}
+
+
+main()
+
+
+
+
+
+
+
 //======================
 //    GAME FUNCTIONS
 //======================
@@ -53,6 +72,7 @@ function playRound(playerSelection, computerSelection){
         break;
     }
 }
+
 
 function oldGame() {
   let compScore = 0;
@@ -246,17 +266,6 @@ function welcomeScreenToGameScreen() {
   document.querySelector('#game-screen')
           .classList
           .remove('hidden');
-  /*
-  const welcomeBtn = document.querySelector('#play-game');
-  welcomeBtn.addEventListener('click', () => {
-    const welcomeSign = document.querySelector('#welcome-screen');
-    welcomeSign.classList.add('hidden');
-
-    document.querySelector('#game-screen')
-      .classList
-      .remove('hidden');
-  })
-  */
 }
 
 function buttonsToEnd() {
