@@ -27,7 +27,7 @@
   <!-- GAME SCREEN -->
   <div id="game-screen" class="game screen">
 
-
+    <!-- Scores -->
     <div class="score-board">
       <div class="sb-title primary-text">Scoreboard</div>
 
@@ -38,13 +38,30 @@
         </div>
         <div class="score-card">
           <div class="sc-name">Computer</div>
-          <div class="sc-num" id="user-score">0</div>
+          <div class="sc-num" id="comp-score">0</div>
         </div>
 
       </div>
     </div>
 
 
+    <!-- User Buttons -->
+    <div class="moves">
+
+      <div class="move-container">
+        <img alt="rocks">
+        <button id="rock" class="mv-btn">Rock!</button>
+      </div>
+      <div class="move-container">
+        <img alt="crumpled paper">
+        <button id="paper" class="mv-btn">Paper!</button>
+      </div>
+      <div class="move-container">
+        <img alt="scissors">
+        <button id="scissors" class="mv-btn">Scissor!</button>
+      </div>
+
+    </div>
   </div>
 </body>
 </html>
