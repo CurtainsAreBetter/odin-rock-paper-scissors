@@ -190,11 +190,63 @@ function setRoundResult(res) {
   }
 }
 
+// game result changes
+function setFinalMessage(final) {
+  const message = document.querySelector('.win-message');
+  switch(final){
+    case 'lose':
+      message.textContent = "YOU LOSE!";
+      break;
+    case 'win':
+      message.textContent = "YOU WIN!";
+      break;
+    case 'tie':
+      message.textContent = "TIE GAME!";
+      break;
+    default:
+      return 'ERROR';
+  }
+}
 
 
 
 // Screen changes
+
+// Results sub screen
+function hideResults() {
+  document.querySelector('.round-info').classList.add('hidden');
+}
+function showResults() {
+  document.querySelector('.round-info').classList.remove('hidden');
+}
+
+
+// end game screen
+function showEndGame() {
+  document.querySelector('.end-game').classList.remove('hidden');
+}
+function hideEndGame() {
+  document.querySelector('.end-game').classList.add('hidden');
+}
+
+// user buttons
+function showUserButtons() {
+  document.querySelector('.moves').classList.remove('hidden');
+}
+function hideUserButtons() {
+  document.querySelector('.moves').classList.add('hidden');
+}
+
+
+// screen transfers
 function welcomeScreenToGameScreen() {
+  document.querySelector('#welcome-screen')
+          .classList
+          .add('hidden');
+  document.querySelector('#game-screen')
+          .classList
+          .remove('hidden');
+  /*
   const welcomeBtn = document.querySelector('#play-game');
   welcomeBtn.addEventListener('click', () => {
     const welcomeSign = document.querySelector('#welcome-screen');
@@ -204,12 +256,14 @@ function welcomeScreenToGameScreen() {
       .classList
       .remove('hidden');
   })
+  */
 }
 
-// Results sub screen
-function hideResults() {
-  document.querySelector('.round-info').classList.add('hidden');
+function buttonsToEnd() {
+  hideUserButtons();
+  showEndGame();
 }
-function showResults() {
-  document.querySelector('.round-info').classList.remove('hidden');
+function endToButtons() {
+  hideEndGame();
+  showUserButtons();
 }
